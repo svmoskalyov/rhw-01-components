@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export function Statistics({ title, stats }) {
   return (
     title && (
@@ -15,3 +17,12 @@ export function Statistics({ title, stats }) {
     )
   );
 }
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ),
+};
